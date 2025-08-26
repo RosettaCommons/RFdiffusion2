@@ -60,3 +60,10 @@ jobs.list*
 *\#
 rf_diffusion/open_source_tests/
 rf_diffusion/test_outputs/
+rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif
+rf_diffusion/exec/mlfold.sif
+rf_diffusion/exec/chai.sif
+rf_diffusion/model_weights/RFD_173.pt
+rf_diffusion/model_weights/RFD_140.pt
+rf_diffusion/third_party_model_weights/ligand_mpnn/s25_r010_t300_p.pt
+rf_diffusion/third_party_model_weights/ligand_mpnn/s_300756.pt
