@@ -30,10 +30,10 @@ Rotation = ru.Rotation
 # Residue Constants from OpenFold/AlphaFold2.
 
 
-IDEALIZED_POS = torch.tensor(residue_constants.restype_atom14_rigid_group_positions)
-DEFAULT_FRAMES = torch.tensor(residue_constants.restype_rigid_group_default_frame)
-ATOM_MASK = torch.tensor(residue_constants.restype_atom14_mask)
-GROUP_IDX = torch.tensor(residue_constants.restype_atom14_to_rigid_group)
+IDEALIZED_POS = torch.from_numpy(residue_constants.restype_atom14_rigid_group_positions)
+DEFAULT_FRAMES = torch.from_numpy(residue_constants.restype_rigid_group_default_frame)
+ATOM_MASK = torch.from_numpy(residue_constants.restype_atom14_mask)
+GROUP_IDX = torch.from_numpy(residue_constants.restype_atom14_to_rigid_group)
 
 def to_atom37(trans, rots):
     fake_psi = torch.zeros(trans.shape[:-1] + (2,), device=trans.device)
