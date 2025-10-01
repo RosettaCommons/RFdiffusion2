@@ -16,6 +16,8 @@ Open source code for RFdiffusion2 as described in the following pre-print.
 }
 ```
 
+More detailed information about how to run, install, and use RFdiffusion2 can be found [here](https://rosettacommons.github.io/RFdiffusion2/). 
+
 ## Set-up
 
 1. **Clone the repo.**

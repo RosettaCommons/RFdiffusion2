@@ -19,8 +19,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx_mdinclude',
-    #'myst_parser', # to use markdown instead of ReST'
-
+    #'myst_parser', # to use markdown instead of ReST
+    'sphinx_copybutton',
 ]
 
 #myst_enable_extensions = ["colon_fence"] # see https://mystmd.org/guide/syntax-overview for more information

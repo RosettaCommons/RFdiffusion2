@@ -3,24 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the Official Documentation for RFdiffusion2!
-=======================================================
+Welcome to the Official Documentation for `RFdiffusion2 <https://github.com/RosettaCommons/RFdiffusion2>`_!
+===========================================================================================================
+.. mdinclude:: overview.md
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
+   
+   Overview <self>
+   readme_link.rst
+   license_link.rst
+   installation.md
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
-.. include:: new.rst
-
-.. include:: modules.rst
-
-.. mdinclude:: ../../README.md
-
-
+.. Indices and tables
+.. ==================
+.. 
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
+.. 
+.. .. include:: new.rst
+.. .. include:: modules.rst
