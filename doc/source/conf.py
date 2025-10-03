@@ -21,6 +21,7 @@ extensions = [
     'sphinx_mdinclude',
     #'myst_parser', # to use markdown instead of ReST
     'sphinx_copybutton',
+    'sphinx_new_tab_link',
 ]
 
 #myst_enable_extensions = ["colon_fence"] # see https://mystmd.org/guide/syntax-overview for more information
@@ -63,7 +64,7 @@ napoleon_use_param = False
 napoleon_use_ivar = True
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'overview.md']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
