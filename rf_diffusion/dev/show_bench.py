@@ -17,6 +17,7 @@ import itertools
 from rf_diffusion.dev import show_tip_pa
 from rf_diffusion.dev import analyze
 from rf_diffusion.parsers import parse_pdb_lines_target
+from rf_diffusion.dev.pymol import mass_paper_rainbow_sel
 
 logger = logging.getLogger(__name__)
 
@@ -458,7 +459,7 @@ def format_ppi(all_entities):
                 continue
             e.selectors['target'] = "chain B and not hetatm"
             cmd.color('paper_teal', e['target'])
-            cmd.do(f"mass_paper_rainbow_sel ({e.NOT('target')} and not hetatm)")
+            mass_paper_rainbow_sel(f"({e.NOT('target')} and not hetatm)")
 
 def pseudoatom(
         cmd,

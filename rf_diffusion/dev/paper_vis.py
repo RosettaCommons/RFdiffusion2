@@ -9,6 +9,7 @@ from rf_diffusion.dev import show_tip_row
 from rf_diffusion.dev import show_bench
 from rf_diffusion.dev import analyze
 from rf_diffusion.dev import pymol_atom_colors
+from rf_diffusion.dev.pymol import mass_paper_rainbow_sel
 
 cmd = analyze.cmd
 
@@ -80,7 +81,7 @@ def make_transparent_rainbow(
     diffused_transparency = 0.45):
     cmd.set('cartoon_transparency', diffused_transparency)
     cmd.set('stick_transparency', diffused_transparency, e['sidechains_diffused'])
-    cmd.do(f'mass_paper_rainbow {e["protein"]}')
+    mass_paper_rainbow_sel(f'{e["protein"]}')
 
 def show_backbone_cartoon(e):
     cmd.show_as('cartoon', f"({e['protein']}) and not (({e['sidechains_motif']}) or ({e['sidechains_diffused']}))")

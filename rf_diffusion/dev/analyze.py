@@ -21,6 +21,7 @@ PKG_DIR = rf_diffusion.__path__[0]
 REPO_DIR = os.path.dirname(PKG_DIR)
 
 from rf_diffusion.dev.pymol import cmd
+from rf_diffusion.dev.pymol import mass_paper_rainbow_sel
 
 import rf_diffusion.estimate_likelihood as el
 from rf_diffusion.inference import utils
@@ -1189,7 +1190,7 @@ def show_paper_pocket(row, des=True, ligand=False):
         #cmd.align(des.name, af2_scaffold.name)
         cmd.align(f'{des.motif_sele()} and name ca', f'{native.motif_sele()} and name ca')
         cmd.show('cartoon', f'{des.name}')
-        cmd.do(f'mass_paper_rainbow_sel {des.name}')
+        mass_paper_rainbow_sel(des.name)
 
     # AF2 sidechains
     cmd.show('licorice', f'({af2.motif_sele()}) and not (name o)')
@@ -1268,7 +1269,7 @@ def show_paper_pocket_af2(row, b=None, des=True, ligand=False, traj_types=None, 
         if has_motif:
             cmd.align(f'{des.motif_sele()} and name ca', f'{native.motif_sele()} and name ca')
         cmd.show('cartoon', f'{des.name}')
-        cmd.do(f'mass_paper_rainbow_sel {des.name}')
+        mass_paper_rainbow_sel(des.name)
 
     if show_af2 and has_motif:
         # AF2 sidechains

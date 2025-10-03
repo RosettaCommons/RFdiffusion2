@@ -5,6 +5,7 @@ from matplotlib import cm
 import functools
 
 from rf_diffusion.dev import analyze
+from rf_diffusion.dev.pymol import mass_paper_rainbow_sel
 cmd = analyze.cmd
 
 class PymolPalette:
@@ -176,7 +177,7 @@ def color_selectors(selectors, carbon=True, verbose=False, des_color=None, hetat
             print(f'{color} --> {sel}')
         if des_color and j==0:
             if des_color == 'rainbow':
-                cmd.do(f'mass_paper_rainbow_sel {sel}')
+                mass_paper_rainbow_sel(sel)
             else:
                 cmd.color(des_color, sel)
         else:

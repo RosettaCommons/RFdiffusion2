@@ -24,7 +24,7 @@ class XMLRPCWrapperProxy(object):
             raise Exception(f"cmd.{self.name}('{','.join(all_args)})'") from e
 
 def get_cmd(pymol_url='http://localhost:9123'):
-    cmd = xmlrpclib.ServerProxy(pymol_url)
+    cmd = xmlrpclib.ServerProxy(pymol_url, allow_none=True)
     if not  ('ipd' in pymol_url or 'localhost' in pymol_url):
         make_network_cmd(cmd)
     return cmd
@@ -41,7 +41,14 @@ def init(pymol_url='http://localhost:9123', init_colors=False):
     
     if init_colors:
         set_colors()
+        cmd.set('sphere_scale', 0.3)
     
+def mass_paper_rainbow_sel(name):
+    """
+    Colors the given selection with a pastel gradient according to residue index.
+    """
+    cmd.spectrum("count", "paper_navaho paper_melon paper_pink paper_purple paper_lightblue paper_blue paper_darkblue", name, None, None, 0, 1)
+
 def set_colors():
     """
     Creates extra colors in pymol 
