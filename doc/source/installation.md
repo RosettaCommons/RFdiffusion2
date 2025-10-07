@@ -1,15 +1,40 @@
-# Installing RFdiffusion2
+# Installation Guide
 
 ## Apptainer Image (Recommended)
-There is an Apptainer image provided in the RFdiffusion2 repository, it is located at `RFdiffusion2/rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif`. This file can be run with either Apptainer or Singularity, if you have any issues using it please [create an issue](https://github.com/RosettaCommons/RFdiffusion2/issues). An example of how to use this image is given in the [README](readme_link.html#inference). 
+There is an Apptainer image provided in the RFdiffusion2 repository, it is located at `RFdiffusion2/rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif`. This file can be run with either Apptainer or Singularity, if you have any issues using it please [create an issue](https://github.com/RosettaCommons/RFdiffusion2/issues). An example of how to use this image is given in the [README](readme_link.html#inference).
 
 If you need to generate your own image, the `.spec` file used to generate the given `.sif` file can be found at `RFdiffusion2/rf_diffusion/exec/rf_diffusion_aa.spec`.
+
+### Troubleshooting
+<a id="image_troubleshooting"></a>
+
+<details>
+<summary>lz4 compression issues</summary>
+
+Full error message you might see: 
+```
+FATAL: container creation failed: mount hook function failure: mount /proc/self/fd/3->/var/apptainer/mnt/session/rootfs error: while mounting image /proc/self/fd/3: squashfuse_ll exited with status 255: Squashfs image uses lz4 compression, this version supports only zlib.
+```
+Or you may see
+```
+FATAL: kernel reported a bad superblock for squashfs image partition,possible causes are that your kernel doesn't support the compression algorithm or the image is corrupted.
+```
+
+To fix this issue you can rebuild the sif on your HPC cluster: 
+```
+apptainer build --sandbox rfd2_sandbox /path/to/bakerlab_rf_diffusion_aa.sif
+apptainer build rfd2_zlib.sif rfd2 sandbox
+```
+Thank you to those who posted in [Issue 10](https://github.com/RosettaCommons/RFdiffusion2/issues/10) for reporting this problem and documenting a
+solution.  
+</details>
+
 
 ## Installation from Source
 Some of the dependencies listed below will vary based on your system, especially the version of CUDA available on your cluster. 
 You will likely need to change some of the versions of the tools below to successfully install RFdiffusion2. 
 The instructions below are for CUDA 12.4 and PyTorch 2.4.
-For some useful troubleshooting tips, see the [Troubleshooting](#troubleshooting) section below. 
+For some useful troubleshooting tips, see the [Troubleshooting](#install_troubleshooting) section below. 
 
 1. Create a conda environment using [miniforge](https://github.com/conda-forge/miniforge) and activate it
 1. Point to the correct [NVIDIA-CUDA channel](https://anaconda.org/nvidia/cuda/labels),  and install [PyTorch](https://pytorch.org/), Python 3.11, and [pip](https://pip.pypa.io/en/latest/) based on what is available on your system:
@@ -105,10 +130,17 @@ For some useful troubleshooting tips, see the [Troubleshooting](#troubleshooting
     ```
     export PYTHONPATH=$PYTHONPATH:/path/to/RFdiffusion2
     ```
+    
+    You can add this to your environment via
+    ```
+    conda env config vars set PYTHONPATH=$PYTHONPATH:/path/to/RFdiffusion2
+    ```
+    so that you do not need to set it every time.
 
 .. _troubleshooting:
 
 ### Troubleshooting
+<a id="install_troubleshooting"></a>
 Ran into an installation issue not covered here? [Create a new issue!](https://github.com/RosettaCommons/RFdiffusion2/issues)
 
 

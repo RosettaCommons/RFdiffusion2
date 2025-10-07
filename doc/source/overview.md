@@ -1,7 +1,7 @@
 Overview
 ========
 
-Introduced in [*Atom level enzyme active site scaffolding using RFdiffusion2*](https://www.biorxiv.org/content/10.1101/2025.04.09.648075v1), RFdiffusion2 expands on the enzyme scaffolding capabilities of diffusion-based protein design by giving researchers finer control over enzyme active sites. 
+Introduced in [Atom level enzyme active site scaffolding using RFdiffusion2](https://www.biorxiv.org/content/10.1101/2025.04.09.648075v1), RFdiffusion2 expands on the enzyme scaffolding capabilities of diffusion-based protein design by giving researchers finer control over enzyme active sites. 
 The original [RFdiffusion](https://github.com/RosettaCommons/RFdiffusion) could generate enzyme scaffolds, but the geometry of the active site could only the specified at the residue level - no atomic or rotamer information could be directly provided. 
 Although defining hotspot residues provided a way for protein designers to control scaffold-ligand interactions, they offered  limited flexibility for the placement of the catalytic residues in the final design. 
 
@@ -12,4 +12,4 @@ RFdiffusion2 addresses these limitations by:
 
 To learn how to run RFdiffusion2 using an [Apptainer](https://apptainer.org/) image, see the [READEME](readme_link.html). 
 
-> **NOTE:** The current rendition of RFdiffusion2 makes it particularly useful for enzyme scaffolding, but for many other applications RFdiffusion (the original) will be easier to use and may provide comparable or better results. 
+> **NOTE:** The current rendition of RFdiffusion2 makes it particularly useful for enzyme scaffolding and it has increased backbone flexibility compared to RFdiffusion. However, for binder design it is recommended to use the original RFdiffusion. 

@@ -21,7 +21,7 @@ extensions = [
     'sphinx_mdinclude',
     #'myst_parser', # to use markdown instead of ReST
     'sphinx_copybutton',
-    'sphinx_new_tab_link',
+    #'sphinx_new_tab_link',
 ]
 
 #myst_enable_extensions = ["colon_fence"] # see https://mystmd.org/guide/syntax-overview for more information
@@ -64,7 +64,7 @@ napoleon_use_param = False
 napoleon_use_ivar = True
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'overview.md']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'overview.md', 'usage/run_inference_example.md', 'usage/other_pipeline_example.md']    
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -75,8 +75,6 @@ html_static_path = ['_static']
 
 html_theme_options = {
     "sidebar_hide_name":False,
-    "top_of_page_buttons": ["edit"],
-    ""
     #"announcement": "<em>THIS DOCUMENTATION IS CURRENTLY UNDER CONSTRUCTION</em>",
     "light_css_variables": {
         "color-brand-primary": "#F68A33", # Rosetta Teal
