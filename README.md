@@ -84,7 +84,7 @@ The outputs will be written to:
 pipeline_outputs/${now:%Y-%m-%d}_${now:%H-%M-%S}_open_source_demo
 ```
 
-This runs only the design stage of the pipeline.  In order to continue through sequence-fitting with [LigandMPNN](https://github.com/dauparas/LigandMPNN) and folding with [Chai1](https://github.com/chaidiscovery/chai-lab), pass the command line argument: `stop_step=''`.  Note that Chai1 cannot run on all GPU architectures.
+This runs only the design stage of the pipeline.  In order to continue through sequence-fitting with [LigandMPNN](https://github.com/dauparas/LigandMPNN) and folding with [Chai1](https://github.com/chaidiscovery/chai-lab), pass the command line argument: `stop_step='end'`.  Note that Chai1 cannot run on all GPU architectures.
 
 Pipeline runs can be resumed by passing `outdir=/path/to/your/output/directory`.
 
