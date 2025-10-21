@@ -23,7 +23,7 @@ FATAL: kernel reported a bad superblock for squashfs image partition,possible ca
 To fix this issue you can rebuild the sif on your HPC cluster: 
 ```
 apptainer build --sandbox rfd2_sandbox /path/to/bakerlab_rf_diffusion_aa.sif
-apptainer build rfd2_zlib.sif rfd2 sandbox
+apptainer build rfd2_zlib.sif rfd2_sandbox
 ```
 Thank you to those who posted in [Issue 10](https://github.com/RosettaCommons/RFdiffusion2/issues/10) for reporting this problem and documenting a
 solution.  
