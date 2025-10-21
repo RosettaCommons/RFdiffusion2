@@ -54,7 +54,7 @@ If you have trouble with these files but they *should* work based on your system
         ```
         conda env create -f cuda121_env.yml
         conda activate rfd2_env
-        pip install -r requirements_121.txt
+        pip install -r requirements_cuda121.txt
         ```
     This will force the dependencies you want installed by CUDA to be installed before pip is used. 
 2. Check to make sure the python that is being referenced is the one from your conda environment once it is activated. On clusters different modules you have imported might overrule the python in your conda environment. You can either manually give the path to your Python or change your system settings or environment variables to prefer the environment's python installation.
