@@ -154,7 +154,7 @@ It is still possible to view designs on a remote computer from your local PyMOL,
 
 You will need to know an IP address that will point back to your computer, typically you can use 127.0.0.1.
 
-You will also need to add the -R option when you are signing into your cluster and provide the path back to yourPyMOL server:
+You will also need to add the -R option when you are signing into your cluster and provide the path back to your PyMOL server:
 ```
 ssh username@hostname -R 9123:localhost:9123
 ```
