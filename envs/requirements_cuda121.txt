@@ -58,7 +58,7 @@ RestrictedPython
 ruff==0.6.2
 scipy==1.13.1
 seaborn==0.13.2
-submitit 
+submitit
 sympy==1.13.2
 tmtools
 tqdm==4.65.0
