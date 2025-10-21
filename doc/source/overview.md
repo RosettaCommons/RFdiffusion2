@@ -12,4 +12,4 @@ RFdiffusion2 addresses these limitations by:
 
 To learn how to run RFdiffusion2 using an [Apptainer](https://apptainer.org/) image, see the [READEME](readme_link.html). 
 
-> **NOTE:** The current rendition of RFdiffusion2 makes it particularly useful for enzyme scaffolding and it has increased backbone flexibility compared to RFdiffusion. However, for binder design it is recommended to use the original RFdiffusion. 
+> **NOTE:** The current rendition of RFdiffusion2 makes it particularly useful for enzyme scaffolding, but for many other applications RFdiffusion (the original) will be easier to use and may provide comparable or better results. 
