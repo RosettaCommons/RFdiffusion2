@@ -1,0 +1,19 @@
+name: rfd2_env_124
+channels:
+  - nvidia/label/cuda-12.4.0
+  - https://conda.rosettacommons.org
+  - pytorch
+  - dglteam/label/th24_cu124
+dependencies:
+  - python=3.11
+  - pip
+  - numpy<2
+  - matplotlib
+  - jupyterlab
+  - conda-forge::openbabel=3.1.1
+  - dgl
+  - pytorch=2.4.0
+  - pytorch-cuda=12.4
+  - pyrosetta 
+  - pip:
+     - -r requirements_cuda124.txt

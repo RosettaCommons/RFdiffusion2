@@ -30,7 +30,38 @@ solution.
 </details>
 
 
-## Installation from Source
+## Creating Your Own Environment
+You do not need to install RFdiffusion2 itself, but you do need to install several dependencies to be able to use the Python scripts that will run the inference calculations. 
+This is what the Apptainer image above supplies, an environment where the dependencies required by RFdiffusion2 have already been installed. 
+If this container works on your computing system, we highly recommend using it. 
+
+However, if you need to set up your own environment, the instructions below should help you determine the dependency versions you need to get RFdiffusion2 running on your system. 
+
+### Using Provided Environment Files
+We have created a few environment files to automatically generate a conda environment that will allow RFdiffusion2 to run. 
+> Note: Due to variations in GPU types and drivers, we are not able to guarantee that any of the provided environment files successfully install all the required dependencies. See the section below if none of the provided environment files are appropriate for your computing system. 
+
+You can find the prepared environment files in the `envs` directory
+- `cuda121_env.yml` - This is appropriate for systems able to run CUDA 12.1 and PyTorch 2.4.0
+    - This uses requirements_cuda121.txt to install dependencies via `pip`
+- `cuda124_env.yml` - This is appropriate for systems able to run CUDA 12.4 and PyTorch 2.4.0
+    - This uses requirements_cuda124.txt to install dependencies via `pip`
+
+If you have trouble with these files but they *should* work based on your system specifications here are a few things to try: 
+1. Separate the creation of the environment and the installation of dependencies via pip: 
+    1. Remove the last two lines from the above `.yml` files
+    2. 
+        ```
+        conda env create -f cuda121_env.yml
+        conda activate rfd2_env
+        pip install -r requirements_121.txt
+        ```
+    This will force the dependencies you want installed by CUDA to be installed before pip is used. 
+2. Check to make sure the python that is being referenced is the one from your conda environment once it is activated. On clusters different modules you have imported might overrule the python in your conda environment. You can either manually give the path to your Python or change your system settings or environment variables to prefer the environment's python installation.
+3. You can try to install any dependencies that pip hangs on using CUDA instead of pip.
+If you have created an environment file that runs RFdiffusion for a different CUDA version or other dependency versions, create a PR to add it to the `envs` directory. 
+
+### Creating the Environment Manually
 Some of the dependencies listed below will vary based on your system, especially the version of CUDA available on your cluster. 
 You will likely need to change some of the versions of the tools below to successfully install RFdiffusion2. 
 The instructions below are for CUDA 12.4 and PyTorch 2.4.
@@ -104,6 +135,7 @@ For some useful troubleshooting tips, see the [Troubleshooting](#install_trouble
     ruff==0.6.2 \
     scipy==1.13.1 \
     seaborn==0.13.2 \
+    submitit \
     sympy==1.13.2 \
     tmtools \
     tqdm==4.65.0 \
