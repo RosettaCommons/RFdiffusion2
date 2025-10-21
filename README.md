@@ -19,7 +19,7 @@ Open source code for RFdiffusion2 as described in the following pre-print.
 More detailed information about how to run, install, and use RFdiffusion2 can be found [here](https://rosettacommons.github.io/RFdiffusion2/). 
 
 <!-- ## Table of Contents
-- [Set-up](readme_link.html#set-up)
+- [Setup](readme_link.html#setup)
 - [Inference Example](readme_link.html#inference)
 - [Viewing Designs](readme_link.html#viewing-designs)
   - [PyMOL and designs on the same machine](readme_link.html#same_machine_pymol)
@@ -31,10 +31,10 @@ More detailed information about how to run, install, and use RFdiffusion2 can be
     - [LigandMPNN outputs](readme_link.html#ligandmpnn_outputs)
 -->
 
-## Set-up
-<a id="set-up"></a>
+## Setup
+<a id="setup"></a>
 
-If these set-up instructions do not work for your system see the [Installation Guide](installation.html) for troubleshooting issues with the
+If these setup instructions do not work for your system see the [Installation Guide](installation.html) for troubleshooting issues with the
 provided image and alternative instructions for how to install RFdiffusion2 from source. 
 
 1. **Clone the repo.**
@@ -58,7 +58,7 @@ provided image and alternative instructions for how to install RFdiffusion2 from
 
    *Note: You can also run RFdiffusion2 with [Singularity](https://sylabs.io/singularity/).*
 
-   RFdiffusion2 (RFD2) uses [Apptainer](https://apptainer.org) to simplify the environment set-up.
+   RFdiffusion2 (RFD2) uses [Apptainer](https://apptainer.org) to simplify the environment setup.
    If you do not already have Apptainer on your system, please follow the [Apptainer installation instructions](https://apptainer.org/docs/admin/main/installation.html) for your operating system.
 
    If you manage your packages on linux with `apt` you can simply run:
