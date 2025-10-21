@@ -83,7 +83,7 @@ provided image and alternative instructions for how to install RFdiffusion2 from
 
 For other usage examples, see the [Usage page](rosettacommons.github.io/RFdiffusion2/usage/usage.html) in the external documentation. 
 
-The blow commands run several demos that show off some of the inference capabilities of RFdiffusion2 including: 
+The below commands run several demos that show off some of the inference capabilities of RFdiffusion2 including: 
 - enzyme design from an atomic motif and small molecule
 - enzyme design from an atomic motif of unknown sequence positions and a small molecule
 - small-molecule binder design with RASA conditioning 
