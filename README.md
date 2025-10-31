@@ -19,7 +19,7 @@ Open source code for RFdiffusion2 as described in the following pre-print.
 More detailed information about how to run, install, and use RFdiffusion2 can be found [here](https://rosettacommons.github.io/RFdiffusion2/). 
 
 <!-- ## Table of Contents
-- [Set-up](readme_link.html#set-up)
+- [Setup](readme_link.html#setup)
 - [Inference Example](readme_link.html#inference)
 - [Viewing Designs](readme_link.html#viewing-designs)
   - [PyMOL and designs on the same machine](readme_link.html#same_machine_pymol)
@@ -58,7 +58,7 @@ provided image and alternative instructions for how to install RFdiffusion2 from
 
    *Note: You can also run RFdiffusion2 with [Singularity](https://sylabs.io/singularity/).*
 
-   RFdiffusion2 (RFD2) uses [Apptainer](https://apptainer.org) to simplify the environment set-up.
+   RFdiffusion2 (RFD2) uses [Apptainer](https://apptainer.org) to simplify the environment setup.
    If you do not already have Apptainer on your system, please follow the [Apptainer installation instructions](https://apptainer.org/docs/admin/main/installation.html) for your operating system.
 
    If you manage your packages on linux with `apt` you can simply run:
@@ -83,7 +83,7 @@ provided image and alternative instructions for how to install RFdiffusion2 from
 
 For other usage examples, see the [Usage page](rosettacommons.github.io/RFdiffusion2/usage/usage.html) in the external documentation. 
 
-The blow commands run several demos that show off some of the inference capabilities of RFdiffusion2 including: 
+The below commands run several demos that show off some of the inference capabilities of RFdiffusion2 including: 
 - enzyme design from an atomic motif and small molecule
 - enzyme design from an atomic motif of unknown sequence positions and a small molecule
 - small-molecule binder design with RASA conditioning 
@@ -154,7 +154,7 @@ It is still possible to view designs on a remote computer from your local PyMOL,
 
 You will need to know an IP address that will point back to your computer, typically you can use 127.0.0.1.
 
-You will also need to add the -R option when you are signing into your cluster and provide the path back to yourPyMOL server:
+You will also need to add the -R option when you are signing into your cluster and provide the path back to your PyMOL server:
 ```
 ssh username@hostname -R 9123:localhost:9123
 ```
