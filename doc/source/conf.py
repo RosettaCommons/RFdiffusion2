@@ -64,7 +64,7 @@ napoleon_use_param = False
 napoleon_use_ivar = True
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'overview.md', 'usage/run_inference_example.md', 'usage/other_pipeline_example.md']    
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'overview.md', 'usage/run_inference_example.md', 'usage/other_pipeline_example.md', 'usage/configuration_options.md', 'usage/usage.rst']   
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -79,7 +79,7 @@ html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "#F68A33", # Rosetta Teal
         "color-brand-content": "#37939B", # Rosetta Orange
-        "color-admonition-background": "#FB35D6", # Rosetta light orange
+        #"color-admonition-background": "#CCE8E8", # Rosetta light orange
         "font-stack": "Open Sans, sans-serif",
         "font-stack--headings": "Open Sans, sans-serif",
         "color-background-hover": "#DCE8E8ff",
@@ -90,7 +90,7 @@ html_theme_options = {
     "dark_css_variables": {
         "color-brand-primary": "#37939B", # Rosetta teal
         "color-brand-content": "#F68A33", # Rosetta orange
-        "color-admonition-background": "#FB35D6", # Rosetta light orange
+        #"color-admonition-background": "#20565B", # Rosetta light orange
         "font-stack": "Open Sans, sans-serif",
         "font-stack--headings": "Open Sans, sans-serif",
         "color-brand-visited": "#37939B",

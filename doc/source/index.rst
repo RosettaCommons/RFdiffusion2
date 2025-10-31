@@ -15,16 +15,11 @@ Welcome to the Official Documentation for `RFdiffusion2 <https://github.com/Rose
    readme_link.rst
    license_link.rst
    installation.md
-   usage/usage.md
-   usage/configuration_options.md
-   usage/ori_tokens.md
+   usage/ori_tokens.rst
 
 .. toctree::
    :maxdepth: 1
    :hidden:
-
-..   usage/other_pipeline_example.md
-..   usage/run_inference_example.md
 
 .. Indices and tables
 .. ==================

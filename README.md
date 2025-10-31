@@ -34,7 +34,7 @@ More detailed information about how to run, install, and use RFdiffusion2 can be
 ## Set-up
 <a id="set-up"></a>
 
-If these set-up instructions do not work for your system see the [Installation Guide](installation.html) for troubleshooting issues with the
+If these set-up instructions do not work for your system see the [Installation Guide](https://rosettacommons.github.io/RFdiffusion2/installation.html) for troubleshooting issues with the
 provided image and alternative instructions for how to install RFdiffusion2 from source. 
 
 1. **Clone the repo.**
