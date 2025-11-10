@@ -2,7 +2,7 @@ ORI Tokens
 ==========
 
 ORI tokens define the center of mass for the designed portion of the enzyme scaffold. It allows for control over the active site and transition
-state orientation relative to to the protein core. In binder design, the ORI token defines the center of mass of the binder relative to the target protein.
+state orientation relative to the protein core. In binder design, the ORI token defines the center of mass of the binder relative to the target protein.
 
 .. warning:: 
    
