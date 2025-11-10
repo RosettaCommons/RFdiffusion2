@@ -64,7 +64,7 @@ napoleon_use_param = False
 napoleon_use_ivar = True
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'overview.md', 'usage/run_inference_example.md', 'usage/other_pipeline_example.md', 'usage/configuration_options.md', 'usage/usage.rst']   
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'overview.md', 'usage/run_inference_example.md', 'usage/other_pipeline_example.md', 'usage/configuration_options.md', 'usage/usage.rst']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
