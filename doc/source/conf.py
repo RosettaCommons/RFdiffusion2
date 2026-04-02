@@ -96,3 +96,8 @@ html_theme_options = {
         "color-brand-visited": "#37939B",
         }
     }
+
+# Inject Simple Analytics
+html_js_files = [
+    "https://scripts.simpleanalyticscdn.com/latest.js",
+]
