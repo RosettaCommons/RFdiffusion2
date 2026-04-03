@@ -1,0 +1,578 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="LICENSE" href="license_link.html"><link rel="prev" title="Welcome to the Official Documentation for RFdiffusion2!" href="index.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>README - RFdiffusion2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=acfd86a5" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #F68A33;
+  --color-brand-content: #37939B;
+  --font-stack: Open Sans, sans-serif;
+  --font-stack--headings: Open Sans, sans-serif;
+  --color-background-hover: #DCE8E8ff;
+  --color-announcement-background: #F68A33dd;
+  --color-announcement-text: #070707;
+  --color-brand-visited: #37939B;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #37939B;
+  --color-brand-content: #F68A33;
+  --font-stack: Open Sans, sans-serif;
+  --font-stack--headings: Open Sans, sans-serif;
+  --color-brand-visited: #37939B;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #37939B;
+  --color-brand-content: #F68A33;
+  --font-stack: Open Sans, sans-serif;
+  --font-stack--headings: Open Sans, sans-serif;
+  --color-brand-visited: #37939B;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">RFdiffusion2  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">RFdiffusion2  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license_link.html">LICENSE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/ori_tokens.html">ORI Tokens</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/readme_link.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="readme">
+<h1>README<a class="headerlink" href="#readme" title="Link to this heading">¶</a></h1>
+<blockquote>
+<div><p>🚧 <strong>Under Construction:</strong> <span class="raw-html-md"><br /></span>
+This is an initial release of the functionality — further documentation and cleanup is in progress.  Currently only inference is supported. But everything currently documented in this README should be runnable. If you are experiencing a bug with inference, feel free to file an issue and attach the output .pdb, .trb, <strong>and</strong> a picture of the design visualized according to the pymol visualization section of this README.</p>
+</div></blockquote>
+<section id="rfdiffusion2">
+<h2>RFdiffusion2<a class="headerlink" href="#rfdiffusion2" title="Link to this heading">¶</a></h2>
+<p>Open source code for RFdiffusion2 as described in the following pre-print.</p>
+<div class="highlight-bib notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">ahern2025atom</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{Atom level enzyme active site scaffolding using RFdiffusion2}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Ahern, Woody and Yim, Jason and Tischer, Doug and Salike, Saman and Woodbury, Seth M and Kim, Donghyo and Kalvet, Indrek and Kipnis, Yakov and Coventry, Brian and Altae-Tran, Han Raut and others}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{bioRxiv}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">pages</span><span class="p">=</span><span class="s">{2025--04}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2025}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">publisher</span><span class="p">=</span><span class="s">{Cold Spring Harbor Laboratory}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>More detailed information about how to run, install, and use RFdiffusion2 can be found <a class="reference external" href="https://rosettacommons.github.io/RFdiffusion2/">here</a>.</p>
+<!-- ## Table of Contents
+- [Setup](readme_link.html#setup)
+- [Inference Example](readme_link.html#inference)
+- [Viewing Designs](readme_link.html#viewing-designs)
+  - [PyMOL and designs on the same machine](readme_link.html#same_machine_pymol)
+  - [PyMOL running locally, designs on remote GPU](readme_link.html#remote_machine_pymol)
+- [Additional Info](readme_link.html#additional_info)
+  - [Running the AME benchmark](readme_link.html#ame_benchmark)
+  - [Pipeline metrics](readme_link.html#pipeline_metrics)
+    - [RFdiffusion2 outputs](readme_link.html#rfdiffusion2_outputs)
+    - [LigandMPNN outputs](readme_link.html#ligandmpnn_outputs)
+--><section id="set-up">
+<h3>Set-up<a class="headerlink" href="#set-up" title="Link to this heading">¶</a></h3>
+<p><span class="raw-html-md"><a id="set-up"></a></span></p>
+<p>If these set-up instructions do not work for your system see the <a class="reference external" href="https://rosettacommons.github.io/RFdiffusion2/installation.html">Installation Guide</a> for troubleshooting issues with the
+provided image and alternative instructions for how to install RFdiffusion2 from source.</p>
+<ol class="arabic">
+<li><p><strong>Clone the repo.</strong></p></li>
+<li><p><strong>Add the repo to your PYTHONPATH</strong></p>
+<p>If you installed the repo into <code class="docutils literal notranslate"><span class="pre">/my/path/to/RFdiffusion2</span></code>, then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">&quot;/my/path/to/RFdiffusion2&quot;</span>
+</pre></div>
+</div>
+<p>You will need to export this variable every time you use RFdiffusion2.</p>
+</li>
+<li><p><strong>Download the model weights and containers:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/my/path/to/RFdiffusion2
+python<span class="w"> </span>setup.py
+</pre></div>
+</div>
+<p>These files are quite large so the download process can take over half an hour. If the download process gets terminated before finishing run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">overwrite</span></code> so that any partially downloaded files can be overwritten.</p>
+</li>
+<li><p><strong>Install Apptainer</strong></p>
+<p><em>Note: You can also run RFdiffusion2 with `Singularity &lt;https://sylabs.io/singularity/&gt;`_.</em></p>
+<p>RFdiffusion2 (RFD2) uses <a class="reference external" href="https://apptainer.org">Apptainer</a> to simplify the environment setup.
+If you do not already have Apptainer on your system, please follow the <a class="reference external" href="https://apptainer.org/docs/admin/main/installation.html">Apptainer installation instructions</a> for your operating system.</p>
+<p>If you manage your packages on linux with <code class="docutils literal notranslate"><span class="pre">apt</span></code> you can simply run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>-y<span class="w"> </span>ppa:apptainer/ppa
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apptainer
+</pre></div>
+</div>
+<p>Once apptainer is installed, the image is provided as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rf_diffusion</span><span class="o">/</span><span class="n">exec</span><span class="o">/</span><span class="n">bakerlab_rf_diffusion_aa</span><span class="o">.</span><span class="n">sif</span>
+</pre></div>
+</div>
+<p>You can then run commands as such:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>exec/bakerlab_rf_diffusion_aa.sif<span class="w"> </span>&lt;path-to-python_file&gt;<span class="w"> </span>&lt;args&gt;
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="inference-example">
+<h3>Inference Example<a class="headerlink" href="#inference-example" title="Link to this heading">¶</a></h3>
+<p><span class="raw-html-md"><a id="inference"></a></span></p>
+<p>For other usage examples, see the <a class="reference external" href="rosettacommons.github.io/RFdiffusion2/usage/usage.html">Usage page</a> in the external documentation.</p>
+<p>The below commands run several demos that show off some of the inference capabilities of RFdiffusion2 including:</p>
+<ul class="simple">
+<li><p>enzyme design from an atomic motif and small molecule</p></li>
+<li><p>enzyme design from an atomic motif of unknown sequence positions and a small molecule</p></li>
+<li><p>small-molecule binder design with RASA conditioning
+The possible demo options can be found in <code class="docutils literal notranslate"><span class="pre">rf_diffusion/benchmark/open_source_demo.json</span></code> which also shows the different inference configurations
+used in each demo. Note that this will be extremely slow if not run on a GPU.</p></li>
+</ul>
+<!--The default argument `in_proc=True` in `open_source_demo.yaml` makes the script run locally. With `in_proc=False` the pipeline will automatically distribute the tasks using SLURM, but this is not yet supported.--><p>The demo generates 150 residue proteins with many of the residues atomized, so it can take upwards of 30 minutes to run all cases.  Each case may take up to 10 minutes on an RTX2060.</p>
+<p><strong>Run single demo case:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif<span class="w"> </span>rf_diffusion/benchmark/pipeline.py<span class="w"> </span>--config-name<span class="o">=</span>open_source_demo<span class="w"> </span>sweep.benchmarks<span class="o">=</span>active_site_unindexed_atomic_partial_ligand
+</pre></div>
+</div>
+<p>You can replace <code class="docutils literal notranslate"><span class="pre">active_site_unindexed_atomic_partial_ligand</span></code> with any of the other demos included in <code class="docutils literal notranslate"><span class="pre">rf_diffusion/benchmark/open_source_demo.json</span></code>.</p>
+<p><strong>Run all demo cases:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif<span class="w"> </span>rf_diffusion/benchmark/pipeline.py<span class="w"> </span>--config-name<span class="o">=</span>open_source_demo
+</pre></div>
+</div>
+<p>The outputs will be written to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pipeline_outputs/${now:%Y-%m-%d}_${now:%H-%M-%S}_open_source_demo
+</pre></div>
+</div>
+<p>in the directory that you are running the image file from.</p>
+<p>This runs only the design stage of the pipeline.  In order to continue through sequence-fitting with <a class="reference external" href="https://github.com/dauparas/LigandMPNN">LigandMPNN</a> and folding with <a class="reference external" href="https://github.com/chaidiscovery/chai-lab">Chai1</a>, pass the command line argument: <code class="docutils literal notranslate"><span class="pre">stop_step='end'</span></code>.  Note that Chai1 cannot run on all GPU architectures.</p>
+<p>Pipeline runs can be resumed by passing <code class="docutils literal notranslate"><span class="pre">outdir=/path/to/your/output/directory</span></code>.</p>
+</section>
+<section id="viewing-designs">
+<h3>Viewing Designs<a class="headerlink" href="#viewing-designs" title="Link to this heading">¶</a></h3>
+<p><span class="raw-html-md"><a id="viewing-designs"></a></span></p>
+<p>Visualizing the design outputs can be confusing when looking at the raw .pdb files, especially for unindexed motif scaffolding, in which the input motif is incorporated into the protein at indices of the network’s choice. <span class="raw-html-md"><br /></span>
+To simplify this, we provide scripts for visualizing the outputs of the network that interact with a local PyMOL instance over XMLRPC.</p>
+<p>Download <a class="reference external" href="https://www.pymol.org/">PyMOL</a> and run it as an XML-RPC server with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pymol<span class="w"> </span>-R
+</pre></div>
+</div>
+<section id="pymol-and-designs-on-the-same-machine">
+<h4>PyMOL and designs on the same machine<a class="headerlink" href="#pymol-and-designs-on-the-same-machine" title="Link to this heading">¶</a></h4>
+<p><span class="raw-html-md"><a id="same_machine_pymol"></a></span></p>
+<p>Run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif<span class="w"> </span>rf_diffusion/dev/show_bench.py<span class="w"> </span>--clear<span class="o">=</span>True<span class="w"> </span>--key<span class="o">=</span>name<span class="w"> </span><span class="s1">&#39;/absolute/path/to/pipeline_outputs/output_directory/*.pdb&#39;</span>
+</pre></div>
+</div>
+<p>This command will display the predicted X1 at each step in the flow-matching trajectory for each design in the output directory. <span class="raw-html-md"><br /></span>
+You should see something like:</p>
+<a class="reference external image-reference" href="assets/unindexed_atomic_0_ray.png"><img alt="unindexed_atomic" src="assets/unindexed_atomic_0_ray.png" />
+</a>
+<p><strong>Legend:</strong></p>
+<ul class="simple">
+<li><p>Atomized protein motif atoms : green.</p></li>
+<li><p>Atomized protein motif atoms : blue.</p></li>
+<li><p>Backbone protein motif atoms : yellow.</p></li>
+<li><p>The generated backbone will be colored a pastel gradient.</p></li>
+<li><p>Any small molecules will have their carbon atoms colored purple.</p></li>
+</ul>
+</section>
+<section id="pymol-running-locally-designs-on-remote-gpu">
+<h4>PyMOL running locally, designs on remote GPU<a class="headerlink" href="#pymol-running-locally-designs-on-remote-gpu" title="Link to this heading">¶</a></h4>
+<p><span class="raw-html-md"><a id="remote_machine_pymol"></a></span></p>
+<p>It is common for users to be sshed into a gpu cluster for running designs. <span class="raw-html-md"><br /></span>
+It is still possible to view designs on a remote computer from your local PyMOL, as long as your remote computer has a route to your local computer (via VPN or ssh proxy).</p>
+<p>You will need to know an IP address that will point back to your computer, typically you can use 127.0.0.1.</p>
+<p>You will also need to add the -R option when you are signing into your cluster and provide the path back to your PyMOL server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@hostname</span> <span class="o">-</span><span class="n">R</span> <span class="mi">9123</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">9123</span>
+</pre></div>
+</div>
+<p>You do <strong>not</strong> need to replace <code class="docutils literal notranslate"><span class="pre">localhost</span></code> with an IP address. The 9123 is the port that should have been printed in the PyMOL terminal
+when you first set up the XML-RPC server.</p>
+<p>If you need to sign into multiple servers before you can run Apptainer, you will need to sign into your cluster like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">J</span> <span class="n">username</span><span class="nd">@first_hostname</span> <span class="n">username</span><span class="nd">@second_hostname</span> <span class="o">-</span><span class="n">R</span> <span class="mi">9123</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">9123</span>
+</pre></div>
+</div>
+<p>The -J option stands for ‘jump host’ and allows you to connect to a remote host through an intermediate server in one command.</p>
+<p>Simply append <code class="docutils literal notranslate"><span class="pre">--pymol_url=http://127.0.0.1:9123</span></code> to the command, i.e. from your remote machine (cluster) run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif<span class="w"> </span>rf_diffusion/dev/show_bench.py<span class="w"> </span>--clear<span class="o">=</span>True<span class="w"> </span>--key<span class="o">=</span>name<span class="w"> </span><span class="s1">&#39;/absolute/path/to/pipeline_outputs/output_directory/*.pdb&#39;</span><span class="w"> </span>--pymol_url<span class="o">=</span>http://127.0.0.1:9123
+</pre></div>
+</div>
+<p>If 127.0.0.1 does not point to your local machine, replace it in all the above steps in this section with an IP address that does point to your machine.</p>
+<p>For more information about using PyMOL remotely, see this blog post on <a class="reference external" href="https://www.blopig.com/blog/2024/11/controlling-pymol-from-afar/">Controlling PyMOL from afar</a>.</p>
+</section>
+</section>
+<section id="additional-information">
+<h3>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading">¶</a></h3>
+<p><span class="raw-html-md"><a id="additional_info"></a></span></p>
+<section id="running-the-ame-benchmark">
+<h4>Running the AME benchmark<a class="headerlink" href="#running-the-ame-benchmark" title="Link to this heading">¶</a></h4>
+<p><span class="raw-html-md"><a id="ame_benchmark"></a></span></p>
+<p>We crawled M-CSA for 41 enzymes where all reactants and products are present to create this benchmark. <span class="raw-html-md"><br /></span>
+Only positon-agnostic tip atoms are provided to the network. 100 designs for each case are created. Run it with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--nv<span class="w"> </span>rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif<span class="w"> </span>rf_diffusion/benchmark/pipeline.py<span class="w"> </span>--config-name<span class="o">=</span>enzyme_bench_n41_fixedligand<span class="w"> </span><span class="nv">in_proc</span><span class="o">=</span>True
+</pre></div>
+</div>
+<p>Running this entire benchmark will perform [41 active sites * 100 designs per active site * 8 sequences per design] chai folding runs, which will take a prohibitively long time on a single machine, but for reproducibility it is included.</p>
+</section>
+<section id="pipeline-metrics">
+<h4>Pipeline metrics<a class="headerlink" href="#pipeline-metrics" title="Link to this heading">¶</a></h4>
+<p><span class="raw-html-md"><a id="pipeline_metrics"></a></span></p>
+<p>We also include the code that was used to benchmark the network. <span class="raw-html-md"><br /></span>
+The outline of the benchmarking process is:</p>
+<ol class="arabic simple">
+<li><p>Use RFdiffusion2 to generate backbones</p></li>
+<li><p>LigandMPNN for sequence fitting</p></li>
+<li><p>Chai-1 for refolding</p></li>
+</ol>
+<p>The final output csv shows many metrics about the designed structure. <span class="raw-html-md"><br /></span>
+Notably, we consider motif recapitulation metrics to measure how well the network scaffolded the given motif. <span class="raw-html-md"><br /></span>
+Motif recapitulation metrics follow the following formula:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">contig_rmsd_a_b_s</span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><strong>a, b</strong>: the proteins being compared:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">des</span></code>: The MPNN packed protein</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred</span></code>: The Chai prediction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ref</span></code>: The input PDB <span class="raw-html-md"><br /></span>
+(With the caveat that ‘ref’ is always omitted from the name.)</p></li>
+</ul>
+</li>
+<li><p><strong>s</strong>: the comparison type:</p>
+<ul>
+<li><p><span class="raw-html-md"><code class="docutils literal"><span class="pre"> </span></code></span> : backbone (N, Ca, C)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c_alpha</span></code>: Ca</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">full_atom</span></code>: All heavy atoms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">motif_atom</span></code>: Only motif heavy atoms</p></li>
+</ul>
+</li>
+</ul>
+<section id="rfdiffusion2-outputs">
+<h5>RFdiffusion2 outputs<a class="headerlink" href="#rfdiffusion2-outputs" title="Link to this heading">¶</a></h5>
+<p><span class="raw-html-md"><a id="rfdiffusion2_outputs"></a></span></p>
+<p>The network outputs the protein with both the indexed backbone region and the unindexed atomized region. <span class="raw-html-md"><br /></span>
+After that several idealization steps are conducted; the backbone is idealized, the protein is deatomized and the unindexed residues are assigned their corresponding indexed residue (using a greedy algorithm that searches for the closest C-alpha in the indexed backbone).</p>
+<p>There are two further idealization steps that are optional to users:</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">inference.guidepost_xyz_as_design_bb</span> <span class="pre">==</span> <span class="pre">True</span></code>, then the unindexed coordinates overwrite the matched backbone. Otherwise only the sidechain (including C-beta) coordinates of the guidepost are used.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">inference.idealize_sidechain_outputs</span> <span class="pre">==</span> <span class="pre">True</span></code> then all atomized sidechains are idealized. This amounts to finding the set of torsions angles that minimizes the RMSD between the unidealized residue and the residue reconstructed from those torsion angles. Note: these torsions are the full RF All-Atom torsion set which includes not only torsions but also bends and twists e.g. C-Beta bend which can adopt values which would be of higher-strain than that seen in nature.</p></li>
+</ul>
+<p>The protein at this point has sequence and structure for the motif regions but only backbone (N,Ca,C,O,C-Beta) coordinates for diffused residues (as well as any non-protein components e.g. small molecules).</p>
+</section>
+<section id="ligandmpnn-outputs">
+<h5>LigandMPNN outputs<a class="headerlink" href="#ligandmpnn-outputs" title="Link to this heading">¶</a></h5>
+<p><span class="raw-html-md"><a id="ligandmpnn_outputs"></a></span></p>
+<p>Sequence is fit using LigandMPNN in a ligand-aware, motif-rotamer-aware mode. LigandMPNN also performs packing. LigandMPNN attempts to keep the motif rotamers unchanged, however the pack uses a more conservative set of torsions than RF All-Atom (i.e. fewer DoF) to pack the rotamers and thus there is often some deviation between the RF All-Atom-idealized and ligandmpnn-idealized motif rotamers. The idealization gap between the diffusion-output rotamer set and the RF All-Atom-idealized rotamer set can be found with metrics key: <code class="docutils literal notranslate"><span class="pre">metrics.IdealizedResidueRMSD.rmsd_constellation</span></code>. The corresponding gap between the rf2aa-idealized (or not idealized if <code class="docutils literal notranslate"><span class="pre">inference.idealize_sidechain_outputs</span> <span class="pre">==</span> <span class="pre">False</span></code>) rotamer set and the ligandmpnn-idealized rotamer set can be found with metrics key: <code class="docutils literal notranslate"><span class="pre">motif_ideality_diff</span></code>.</p>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="license_link.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">LICENSE</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Institute for Protein Design, University of Washington
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">README</a><ul>
+<li><a class="reference internal" href="#rfdiffusion2">RFdiffusion2</a><ul>
+<li><a class="reference internal" href="#set-up">Set-up</a></li>
+<li><a class="reference internal" href="#inference-example">Inference Example</a></li>
+<li><a class="reference internal" href="#viewing-designs">Viewing Designs</a><ul>
+<li><a class="reference internal" href="#pymol-and-designs-on-the-same-machine">PyMOL and designs on the same machine</a></li>
+<li><a class="reference internal" href="#pymol-running-locally-designs-on-remote-gpu">PyMOL running locally, designs on remote GPU</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-information">Additional Information</a><ul>
+<li><a class="reference internal" href="#running-the-ame-benchmark">Running the AME benchmark</a></li>
+<li><a class="reference internal" href="#pipeline-metrics">Pipeline metrics</a><ul>
+<li><a class="reference internal" href="#rfdiffusion2-outputs">RFdiffusion2 outputs</a></li>
+<li><a class="reference internal" href="#ligandmpnn-outputs">LigandMPNN outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    </body>
+</html>

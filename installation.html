@@ -1,0 +1,563 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="ORI Tokens" href="usage/ori_tokens.html"><link rel="prev" title="LICENSE" href="license_link.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Installation Guide - RFdiffusion2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=acfd86a5" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #F68A33;
+  --color-brand-content: #37939B;
+  --font-stack: Open Sans, sans-serif;
+  --font-stack--headings: Open Sans, sans-serif;
+  --color-background-hover: #DCE8E8ff;
+  --color-announcement-background: #F68A33dd;
+  --color-announcement-text: #070707;
+  --color-brand-visited: #37939B;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #37939B;
+  --color-brand-content: #F68A33;
+  --font-stack: Open Sans, sans-serif;
+  --font-stack--headings: Open Sans, sans-serif;
+  --color-brand-visited: #37939B;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #37939B;
+  --color-brand-content: #F68A33;
+  --font-stack: Open Sans, sans-serif;
+  --font-stack--headings: Open Sans, sans-serif;
+  --color-brand-visited: #37939B;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">RFdiffusion2  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">RFdiffusion2  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme_link.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license_link.html">LICENSE</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/ori_tokens.html">ORI Tokens</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/installation.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="installation-guide">
+<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Link to this heading">¶</a></h1>
+<section id="apptainer-image-recommended">
+<h2>Apptainer Image (Recommended)<a class="headerlink" href="#apptainer-image-recommended" title="Link to this heading">¶</a></h2>
+<p>There is an Apptainer image provided in the RFdiffusion2 repository, it is located at <code class="docutils literal notranslate"><span class="pre">RFdiffusion2/rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif</span></code>. This file can be run with either Apptainer or Singularity, if you have any issues using it please <a class="reference external" href="https://github.com/RosettaCommons/RFdiffusion2/issues">create an issue</a>. An example of how to use this image is given in the <a class="reference external" href="readme_link.html#inference">README</a>.</p>
+<p>If you need to generate your own image, the <code class="docutils literal notranslate"><span class="pre">.spec</span></code> file used to generate the given <code class="docutils literal notranslate"><span class="pre">.sif</span></code> file can be found at <code class="docutils literal notranslate"><span class="pre">RFdiffusion2/rf_diffusion/exec/rf_diffusion_aa.spec</span></code>.</p>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h3>
+<p><span class="raw-html-md"><a id="image_troubleshooting"></a></span></p>
+<details>
+<summary>lz4 compression issues</summary><p>Full error message you might see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FATAL</span><span class="p">:</span> <span class="n">container</span> <span class="n">creation</span> <span class="n">failed</span><span class="p">:</span> <span class="n">mount</span> <span class="n">hook</span> <span class="n">function</span> <span class="n">failure</span><span class="p">:</span> <span class="n">mount</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="bp">self</span><span class="o">/</span><span class="n">fd</span><span class="o">/</span><span class="mi">3</span><span class="o">-&gt;/</span><span class="n">var</span><span class="o">/</span><span class="n">apptainer</span><span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">session</span><span class="o">/</span><span class="n">rootfs</span> <span class="n">error</span><span class="p">:</span> <span class="k">while</span> <span class="n">mounting</span> <span class="n">image</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="bp">self</span><span class="o">/</span><span class="n">fd</span><span class="o">/</span><span class="mi">3</span><span class="p">:</span> <span class="n">squashfuse_ll</span> <span class="n">exited</span> <span class="k">with</span> <span class="n">status</span> <span class="mi">255</span><span class="p">:</span> <span class="n">Squashfs</span> <span class="n">image</span> <span class="n">uses</span> <span class="n">lz4</span> <span class="n">compression</span><span class="p">,</span> <span class="n">this</span> <span class="n">version</span> <span class="n">supports</span> <span class="n">only</span> <span class="n">zlib</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Or you may see</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FATAL</span><span class="p">:</span> <span class="n">kernel</span> <span class="n">reported</span> <span class="n">a</span> <span class="n">bad</span> <span class="n">superblock</span> <span class="k">for</span> <span class="n">squashfs</span> <span class="n">image</span> <span class="n">partition</span><span class="p">,</span><span class="n">possible</span> <span class="n">causes</span> <span class="n">are</span> <span class="n">that</span> <span class="n">your</span> <span class="n">kernel</span> <span class="n">doesn</span><span class="s1">&#39;t support the compression algorithm or the image is corrupted.</span>
+</pre></div>
+</div>
+<p>To fix this issue you can rebuild the sif on your HPC cluster:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apptainer</span> <span class="n">build</span> <span class="o">--</span><span class="n">sandbox</span> <span class="n">rfd2_sandbox</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">bakerlab_rf_diffusion_aa</span><span class="o">.</span><span class="n">sif</span>
+<span class="n">apptainer</span> <span class="n">build</span> <span class="n">rfd2_zlib</span><span class="o">.</span><span class="n">sif</span> <span class="n">rfd2_sandbox</span>
+</pre></div>
+</div>
+<p>Thank you to those who posted in <a class="reference external" href="https://github.com/RosettaCommons/RFdiffusion2/issues/10">Issue 10</a> for reporting this problem and documenting a
+solution.</p>
+</details></section>
+</section>
+<section id="creating-your-own-environment">
+<h2>Creating Your Own Environment<a class="headerlink" href="#creating-your-own-environment" title="Link to this heading">¶</a></h2>
+<p>You do not need to install RFdiffusion2 itself, but you do need to install several dependencies to be able to use the Python scripts that will run the inference calculations.
+This is what the Apptainer image above supplies, an environment where the dependencies required by RFdiffusion2 have already been installed.
+If this container works on your computing system, we highly recommend using it.</p>
+<p>However, if you need to set up your own environment, the instructions below should help you determine the dependency versions you need to get RFdiffusion2 running on your system.</p>
+<section id="using-provided-environment-files">
+<h3>Using Provided Environment Files<a class="headerlink" href="#using-provided-environment-files" title="Link to this heading">¶</a></h3>
+<p>We have created a few environment files to automatically generate a conda environment that will allow RFdiffusion2 to run.</p>
+<blockquote>
+<div><p>Note: Due to variations in GPU types and drivers, we are not able to guarantee that any of the provided environment files successfully install all the required dependencies. See the section below if none of the provided environment files are appropriate for your computing system.</p>
+</div></blockquote>
+<p>You can find the prepared environment files in the <code class="docutils literal notranslate"><span class="pre">envs</span></code> directory</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cuda121_env.yml</span></code> - This is appropriate for systems able to run CUDA 12.1 and PyTorch 2.4.0</p>
+<ul>
+<li><p>This uses requirements_cuda121.txt to install dependencies via <code class="docutils literal notranslate"><span class="pre">pip</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cuda124_env.yml</span></code> - This is appropriate for systems able to run CUDA 12.4 and PyTorch 2.4.0</p>
+<ul>
+<li><p>This uses requirements_cuda124.txt to install dependencies via <code class="docutils literal notranslate"><span class="pre">pip</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>If you have trouble with these files but they <em>should</em> work based on your system specifications here are a few things to try:</p>
+<ol class="arabic">
+<li><p>Separate the creation of the environment and the installation of dependencies via pip:</p>
+<p>#. Remove the last two lines from the above <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files
+#.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">cuda121_env</span><span class="o">.</span><span class="n">yml</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">rfd2_env</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements_cuda121</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>This will force the dependencies you want installed by CUDA to be installed before pip is used.</p>
+</div></blockquote>
+</li>
+<li><p>Check to make sure the python that is being referenced is the one from your conda environment once it is activated. On clusters different modules you have imported might overrule the python in your conda environment. You can either manually give the path to your Python or change your system settings or environment variables to prefer the environment’s python installation.</p></li>
+<li><p>You can try to install any dependencies that pip hangs on using CUDA instead of pip.
+If you have created an environment file that runs RFdiffusion for a different CUDA version or other dependency versions, create a PR to add it to the <code class="docutils literal notranslate"><span class="pre">envs</span></code> directory.</p></li>
+</ol>
+</section>
+<section id="creating-the-environment-manually">
+<h3>Creating the Environment Manually<a class="headerlink" href="#creating-the-environment-manually" title="Link to this heading">¶</a></h3>
+<p>Some of the dependencies listed below will vary based on your system, especially the version of CUDA available on your cluster.
+You will likely need to change some of the versions of the tools below to successfully install RFdiffusion2.
+The instructions below are for CUDA 12.4 and PyTorch 2.4.
+For some useful troubleshooting tips, see the <span class="xref std std-ref">Troubleshooting</span> section below.</p>
+<ol class="arabic">
+<li><p>Create a conda environment using <a class="reference external" href="https://github.com/conda-forge/miniforge">miniforge</a> and activate it</p></li>
+<li><p>Point to the correct <a class="reference external" href="https://anaconda.org/nvidia/cuda/labels">NVIDIA-CUDA channel</a>,  and install <a class="reference external" href="https://pytorch.org/">PyTorch</a>, Python 3.11, and <a class="reference external" href="https://pip.pypa.io/en/latest/">pip</a> based on what is available on your system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">yes</span> \
+ <span class="o">-</span><span class="n">c</span> <span class="n">nvidia</span><span class="o">/</span><span class="n">label</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="mf">12.4.0</span> \
+ <span class="o">-</span><span class="n">c</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">conda</span><span class="o">.</span><span class="n">rosettacommons</span><span class="o">.</span><span class="n">org</span> \
+ <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span> \
+ <span class="o">-</span><span class="n">c</span> <span class="n">dglteam</span><span class="o">/</span><span class="n">label</span><span class="o">/</span><span class="n">th24_cu124</span> \
+ <span class="n">python</span><span class="o">==</span><span class="mf">3.11</span> \
+ <span class="n">pip</span> \
+ <span class="n">numpy</span><span class="s2">&quot;&lt;2&quot;</span> \
+ <span class="n">matplotlib</span> \
+ <span class="n">jupyterlab</span> \
+ <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="p">::</span><span class="n">openbabel</span><span class="o">==</span><span class="mf">3.1.1</span> \
+ <span class="n">cuda</span> \
+ <span class="n">pytorch</span><span class="o">==</span><span class="mf">2.4</span> \
+ <span class="n">pytorch</span><span class="o">-</span><span class="n">cuda</span><span class="o">==</span><span class="mf">12.4</span> \
+ <span class="n">pyrosetta</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>REMEMBER:</strong> You will need to change your CUDA version based on what is available on your system. This will need to be changed in the
+NVIDIA channel, the dglteam channel, the pytorch version, and the pytorch-cuda version.</p>
+</div></blockquote>
+</li>
+<li><p>Use pip to install several Python libraries:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> \
+<span class="n">hydra</span><span class="o">-</span><span class="n">core</span><span class="o">==</span><span class="mf">1.3.1</span> \
+<span class="n">ml</span><span class="o">-</span><span class="n">collections</span><span class="o">==</span><span class="mf">0.1.1</span> \
+<span class="n">addict</span><span class="o">==</span><span class="mf">2.4.0</span> \
+<span class="n">assertpy</span><span class="o">==</span><span class="mf">1.1.0</span> \
+<span class="n">biopython</span><span class="o">==</span><span class="mf">1.83</span> \
+<span class="n">colorlog</span> \
+<span class="n">compact</span><span class="o">-</span><span class="n">json</span> \
+<span class="n">cython</span><span class="o">==</span><span class="mf">3.0.0</span> \
+<span class="n">cytoolz</span><span class="o">==</span><span class="mf">0.12.3</span> \
+<span class="n">debugpy</span><span class="o">==</span><span class="mf">1.8.5</span> \
+<span class="n">deepdiff</span><span class="o">==</span><span class="mf">6.3.0</span> \
+<span class="n">dm</span><span class="o">-</span><span class="n">tree</span><span class="o">==</span><span class="mf">0.1.8</span> \
+<span class="n">e3nn</span><span class="o">==</span><span class="mf">0.5.1</span> \
+<span class="n">einops</span><span class="o">==</span><span class="mf">0.7.0</span> \
+<span class="n">executing</span><span class="o">==</span><span class="mf">2.0.0</span> \
+<span class="n">fastparquet</span><span class="o">==</span><span class="mf">2024.5.0</span> \
+<span class="n">fire</span><span class="o">==</span><span class="mf">0.6.0</span> \
+<span class="n">GPUtil</span><span class="o">==</span><span class="mf">1.4.0</span> \
+<span class="n">icecream</span><span class="o">==</span><span class="mf">2.1.3</span> \
+<span class="n">ipdb</span><span class="o">==</span><span class="mf">0.13.11</span> \
+<span class="n">ipykernel</span><span class="o">==</span><span class="mf">6.29.5</span> \
+<span class="n">ipython</span><span class="o">==</span><span class="mf">8.27.0</span> \
+<span class="n">ipywidgets</span> \
+<span class="n">mdtraj</span><span class="o">==</span><span class="mf">1.10.0</span> \
+<span class="n">numba</span> \
+<span class="n">omegaconf</span><span class="o">==</span><span class="mf">2.3.0</span> \
+<span class="n">opt_einsum</span><span class="o">==</span><span class="mf">3.3.0</span> \
+<span class="n">pandas</span><span class="o">==</span><span class="mf">1.5.0</span> \
+<span class="n">plotly</span><span class="o">==</span><span class="mf">5.16.1</span> \
+<span class="n">pre</span><span class="o">-</span><span class="n">commit</span><span class="o">==</span><span class="mf">3.7.1</span> \
+<span class="n">py3Dmol</span><span class="o">==</span><span class="mf">2.2.1</span> \
+<span class="n">pyarrow</span><span class="o">==</span><span class="mf">17.0.0</span> \
+<span class="n">pydantic</span> \
+<span class="n">pyrsistent</span><span class="o">==</span><span class="mf">0.19.3</span> \
+<span class="n">pytest</span><span class="o">-</span><span class="n">benchmark</span> \
+<span class="n">pytest</span><span class="o">-</span><span class="n">cov</span><span class="o">==</span><span class="mf">4.1.0</span> \
+<span class="n">pytest</span><span class="o">-</span><span class="n">dotenv</span><span class="o">==</span><span class="mf">0.5.2</span> \
+<span class="n">pytest</span><span class="o">==</span><span class="mf">8.2.0</span> \
+<span class="n">rdkit</span><span class="o">==</span><span class="mf">2024.3.5</span> \
+<span class="n">RestrictedPython</span> \
+<span class="n">ruff</span><span class="o">==</span><span class="mf">0.6.2</span> \
+<span class="n">scipy</span><span class="o">==</span><span class="mf">1.13.1</span> \
+<span class="n">seaborn</span><span class="o">==</span><span class="mf">0.13.2</span> \
+<span class="n">submitit</span> \
+<span class="n">sympy</span><span class="o">==</span><span class="mf">1.13.2</span> \
+<span class="n">tmtools</span> \
+<span class="n">tqdm</span><span class="o">==</span><span class="mf">4.65.0</span> \
+<span class="n">typer</span><span class="o">==</span><span class="mf">0.12.5</span> \
+<span class="n">wandb</span><span class="o">==</span><span class="mf">0.13.10</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install <a class="reference external" href="https://www.biotite-python.org/latest/index.html">Biotite</a> and several libraries related to PyTorch, and <a class="reference external" href="https://pypi.org/project/pylibcugraphops-cu12/">pylibcugraphops</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">biotite</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pyg_lib</span> <span class="n">torch_scatter</span> <span class="n">torch_sparse</span> <span class="n">torch_cluster</span> <span class="n">torch_spline_conv</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">pyg</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">torch</span><span class="o">-</span><span class="mf">2.4.0</span><span class="o">+</span><span class="n">cu124</span><span class="o">.</span><span class="n">html</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">rapidsai</span><span class="o">-</span><span class="n">wheels</span><span class="o">-</span><span class="n">nightly</span><span class="o">/</span><span class="n">simple</span> <span class="s2">&quot;pylibcugraphops-cu12&gt;=24.6.0a24&quot;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>REMEMBER:</strong> You will need to change the link for installing the PyTorch-related libraries (the second line in the code block above) to have it match your PyTorch and CUDA versions.</p>
+</div></blockquote>
+</li>
+<li><p>Install a version of <a class="reference external" href="https://pypi.org/project/torchdata/#what-is-torchdata">TorchData</a> that still has DataPipes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torchdata</span><span class="o">==</span><span class="mf">0.9.0</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install a version of the <a class="reference external" href="https://www.dgl.ai/pages/start.html">Deep Graph Library</a> based on the version of PyTorch and CUDA you are using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">dglteam</span><span class="o">/</span><span class="n">label</span><span class="o">/</span><span class="n">th24_cu124</span> <span class="n">dgl</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>REMEMBER:</strong> You will need to change the conda channel to the correct version of PyTorch (<code class="docutils literal notranslate"><span class="pre">th24</span></code> in the line above) and CUDA (<code class="docutils literal notranslate"><span class="pre">cu124</span></code> in the line above). Use the <a class="reference external" href="https://www.dgl.ai/pages/start.html">Deep Graph Library’s Installation guide</a> to determine the correct conda or pip command.</p>
+</div></blockquote>
+</li>
+<li><p>Set your <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PYTHONPATH=$PYTHONPATH:/path/to/RFdiffusion2
+</pre></div>
+</div>
+<p>You can add this to your environment via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>conda env config vars set PYTHONPATH=$PYTHONPATH:/path/to/RFdiffusion2
+</pre></div>
+</div>
+<p>so that you do not need to set it every time.</p>
+</li>
+</ol>
+</section>
+<section id="id1">
+<span id="id2"></span><h3>Troubleshooting<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p><span class="raw-html-md"><a id="install_troubleshooting"></a></span>
+Ran into an installation issue not covered here? [Create a new issue!](<a class="reference external" href="https://github.com/RosettaCommons/RFdiffusion2/issues">https://github.com/RosettaCommons/RFdiffusion2/issues</a>)</p>
+<details>
+<summary>How to determine the highest available CUDA version on your system</summary><p>The <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> command will print out information about the available GPUs you can access on your cluster.
+The first line in the result will look something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+---------------------------------------------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">NVIDIA</span><span class="o">-</span><span class="n">SMI</span> <span class="mf">535.230.02</span>             <span class="n">Driver</span> <span class="n">Version</span><span class="p">:</span> <span class="mf">535.230.02</span>   <span class="n">CUDA</span> <span class="n">Version</span><span class="p">:</span> <span class="mf">12.2</span>     <span class="o">|</span>
+<span class="o">|-----------------------------------------+----------------------+----------------------+</span>
+</pre></div>
+</div>
+<p>Here, this means that this system can only support up to CUDA 12.2. However, if you look at the possible <a class="reference external" href="https://pytorch.org/get-started/previous-versions/">PyTorch versions</a>
+and <a class="reference external" href="https://www.dgl.ai/pages/start.html">Deep Graph Library versions</a> on their installation pages, you’ll notice that they don’t
+have versions for 12.2, so in this situation you would need to change the installation instructions to work with CUDA 12.1.</p>
+</details><details>
+<summary>Cannot find DGL C++ graphbolt library at...</summary><p>Seeing this error likely means that the version of the Deep Graph Library (DGL) that you have installed does not match
+the corresponding version of PyTorch your system is finding. Double check that you installed the correct versions of
+these tools and ensure that your system does not have a different version of PyTorch it is finding.</p>
+<p>It might also be useful to <code class="docutils literal notranslate"><span class="pre">ls</span></code> in the given directory to see what version of the DGL libraries you have installed.
+For example, if your error says it is looking for <code class="docutils literal notranslate"><span class="pre">graphbolt/libgraphbolt_pytorch_2.4.0.so</span></code> it means your system is
+using Pytorch version 2.4.0. Meanwhile if you <code class="docutils literal notranslate"><span class="pre">ls</span></code> in the directory you might see that you only have <code class="docutils literal notranslate"><span class="pre">libgraphbolt_pytorch_2.1.2.so</span></code>
+meaning that the version of DGL you downloaded was only mean to work with PyTorch versions up to 2.1.2.</p>
+</details><details>
+<summary>No module named 'torchdata.datapipes'</summary><p>Newer versions of TorchData have stopped supporting their DataPipes tools. You will need to downgrade the version of TorchData
+you have installed to one at or below version 0.9.0. You can learn more about this change on <a class="reference external" href="https://pypi.org/project/torchdata/">TorchData’s PyPI page</a>.</p>
+</details></section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="usage/ori_tokens.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">ORI Tokens</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="license_link.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">LICENSE</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Institute for Protein Design, University of Washington
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Installation Guide</a><ul>
+<li><a class="reference internal" href="#apptainer-image-recommended">Apptainer Image (Recommended)</a><ul>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creating-your-own-environment">Creating Your Own Environment</a><ul>
+<li><a class="reference internal" href="#using-provided-environment-files">Using Provided Environment Files</a></li>
+<li><a class="reference internal" href="#creating-the-environment-manually">Creating the Environment Manually</a></li>
+<li><a class="reference internal" href="#id1">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    </body>
+</html>
