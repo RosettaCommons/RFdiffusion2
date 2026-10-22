@@ -30,10 +30,10 @@ dependencies:
   - bzip2=1.0.8=h7f98852_4
   - c-ares=1.19.1=hd590300_0
   - c-blosc2=2.10.2=hb4ffafa_0
-  - ca-certificates=2023.7.22=hbcca054_0
+  - ca-certificates
   - cached-property=1.5.2=hd8ed1ab_1
   - cached_property=1.5.2=pyha770c72_1
-  - certifi=2023.7.22=pyhd8ed1ab_0
+  - certifi>=2026.10.19
   - cffi=1.15.1=py310h255011f_3
   - charset-normalizer=3.2.0=pyhd8ed1ab_0
   - comm=0.1.4=pyhd8ed1ab_0
@@ -188,7 +188,7 @@ dependencies:
   - pexpect=4.8.0=pyh1a96a4e_2
   - pickleshare=0.7.5=py_1003
   - pillow=10.0.0=py310h582fbeb_0
-  - pip=23.2.1=pyhd8ed1ab_0
+  - pip>=26.2.2
   - pkgutil-resolve-name=1.3.10=pyhd8ed1ab_0
   - platformdirs=3.10.0=pyhd8ed1ab_0
   - pooch=1.7.0=pyha770c72_3

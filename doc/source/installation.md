@@ -47,6 +47,10 @@ You can find the prepared environment files in the `envs` directory
 - `cuda124_env.yml` - This is appropriate for systems able to run CUDA 12.4 and PyTorch 2.4.0
     - This uses requirements_cuda124.txt to install dependencies via `pip`
 
+> Note: Use pip 26.2.2 or newer. Older pip releases still trust the withdrawn emSign root CA certificate.
+> The environment files do not pin `pip`, so if conda installs an older version, create the environment
+> and install the pip dependencies separately as described in step 1 below.
+
 If you have trouble with these files but they *should* work based on your system specifications here are a few things to try: 
 1. Separate the creation of the environment and the installation of dependencies via pip: 
     1. Remove the last two lines from the above `.yml` files
@@ -54,6 +58,7 @@ If you have trouble with these files but they *should* work based on your system
         ```
         conda env create -f cuda121_env.yml
         conda activate rfd2_env
+        python -m pip install --upgrade pip  # pip 26.2.2 or newer
         pip install -r requirements_cuda121.txt
         ```
     This will force the dependencies you want installed by CUDA to be installed before pip is used. 
@@ -89,6 +94,10 @@ For some useful troubleshooting tips, see the [Troubleshooting](#install_trouble
     > **REMEMBER:** You will need to change your CUDA version based on what is available on your system. This will need to be changed in the 
     > NVIDIA channel, the dglteam channel, the pytorch version, and the pytorch-cuda version. 
 
+1. Upgrade pip to version 26.2.2 or newer:
+    ```
+    python -m pip install --upgrade pip
+    ```
 1. Use pip to install several Python libraries: 
     ```
     pip install \
